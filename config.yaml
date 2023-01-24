@@ -50,7 +50,7 @@ params:
     - name: youtube
       url: https://youtube.com/@enigmatek
     - name: linkedin
-      url: https://www.linkedin.com/in/harshal-mandaliya-a328811a2
+      url: https://www.linkedin.com/in/harshal-mandaliya/
   comments: true
 
   # text search
