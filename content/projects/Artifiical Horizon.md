@@ -17,7 +17,7 @@ The project is based on the Fly-by-wire (FBW) which is a system that replaces al
 
 The code is developed in C# and is available to download from my github profile.
 
-- **Its not fully completed** but feel free to tweak to your preference.
+- **It's not entirely complete, but please feel free to make adjustments according to your preferences.
 
 > If you just want to see how it operates, head over to the following shown in the image below
 
