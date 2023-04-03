@@ -9,7 +9,5 @@ weight: 105
 
 **Nothing here yet...but admire the view of these AI generated images.**
 
-**whats up 3/4/23**
-
 ![](/posts/potions.jpg)
 
