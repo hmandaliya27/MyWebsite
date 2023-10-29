@@ -10,7 +10,7 @@ cover:
 --- 
 
 # Introduction
-In March 2019, while still in college, I participated in a **STEM competition** held aboard HMS Sultan, centred around the Royal Navy's integrated systems. In this post, I aim to provide a comprehensive account of my involvement in this fascinating project.
+In March 2019, a STEM competition held aboard HMS Sultan, centred around the Royal Navy’s integrated systems, that I took part when I was in college. In this post, I aim to provide a comprehensive account of my involvement in this fascinating project.
 
 # Purpose of the challenge
 Designed for young people aged between 14 and 21, the annual competition offers a unique opportunity to grapple with real-world challenges. Each year presents a new theme that aligns with current technological advancements. Participants also have the exceptional experience of spending a day immersed in naval life and an overnight stay on board HMS Bristol.

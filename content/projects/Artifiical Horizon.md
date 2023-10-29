@@ -17,7 +17,7 @@ The project centres on Fly-by-Wire (FBW) technology, a system that supersedes tr
 
 The code for this project is written in C# and is publicly accessible for download from my GitHub profile.
 
-- **While the code is not entirely complete, I welcome any modifications or adjustments you may wish to make to better suit your needs.
+- **While the code is not entirely complete, I welcome any modifications or adjustments you may wish to make to better suit your needs.**
 
 > If you are solely interested in observing the application's functionality, you can find the relevant information displayed in the image below.
 
