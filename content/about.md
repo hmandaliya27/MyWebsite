@@ -1,5 +1,5 @@
 ---
-title: Hi I'm Harshal!
+title: Hi I'm Harshal
 draft: false
 ---
 
