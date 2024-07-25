@@ -9,17 +9,17 @@ cover:
 --- 
 
 # Introduction
-The project is based on the Fly-by-wire (FBW) which is a system that replaces all of the conventional manual plane cockpit display to an electronic interface. A new cockpit display was created which provides FBW including several other aircraft control commands that are necessary. The new interface is designed to replace the ordinary manual flight controls of normal aircrafts while also providing additional control commands. The program was developed in Microsoft Visual Studio as a Windows Form Application.
+The project centres on Fly-by-Wire (FBW) technology, a system that supersedes traditional manual cockpit displays with a modern electronic interface. We developed a new cockpit display that not only incorporates FBW but also integrates several other essential aircraft control commands. This innovative interface is crafted to replace the standard manual flight controls found in conventional aircraft, whilst also offering additional control functionalities. The software for this interface was developed using Microsoft Visual Studio, specifically as a Windows Form Application.
 
-> A graphic user interface to represent the cockpit display and show the key features of the craft while in flight
+> A graphical user interface was designed to represent the cockpit display, effectively showcasing the key features and functionalities of the aircraft during flight. 
 
 ![](/projects/plane/draft.jpg)
 
-The code is developed in C# and is available to download from my github profile.
+The code for this project is written in C# and is publicly accessible for download from my GitHub profile.
 
-- **It's not entirely complete**, but please feel free to make adjustments according to your preferences.
+- **While the code is not entirely complete, I welcome any modifications or adjustments you may wish to make to better suit your needs.**
 
-> If you just want to see how it operates, head over to the following shown in the image below
+> If you are solely interested in observing the application's functionality, you can find the relevant information displayed in the image below.
 
 
 ![](/projects/plane/release.jpg)
