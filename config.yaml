@@ -1,0 +1,87 @@
+baseURL: 'www.harshalmandaliya.com'
+languageCode: en-gb
+title: Harshal Mandaliya
+theme: papermod
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /Posts/
+      weight: 10
+    - identifier: blog
+      name: Projects
+      url: /projects/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+#    - identifier: example
+#      name: example.org
+#      url: 'https://example.org'
+#      weight: 50
+
+
+params:
+  profileMode:
+    enabled: true
+    title: Harshal Mandaliya
+    subtitle: Cyber Security, Youtube, Photoshop, Potterhead and many other things... 
+    imageUrl: /home/me.jpeg
+    #imageUrl: https://i.insider.com/59f1e2b61f58cc4c008b458a?width=700
+    imageTitle: Didn't have a exact perference for a image.
+    imageWidth: 210
+    imageHeight: 220
+
+    buttons:
+      - name: About
+        url: /about
+      - name: Contact
+        url: /contact
+
+  # cover image for posts
+  cover:
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+
+  socialIcons:
+    - name: youtube
+      url: https://youtube.com/@enigmatek
+    - name: linkedin
+      url: https://www.linkedin.com/in/harshal-mandaliya/
+  comments: true
+
+  # text search
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# for search using Fuse.js
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# allow HTML in MD
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+assets: 
+ #Open Tab icon
+     disableHLJS: true 
+ #     favicon: "<link / abs url>" 
+ #     favicon16x16: "<link / abs url>" 
+ #     favicon32x32: "<favicon /static>" 
+ #     apple_touch_icon: "<link / abs url>" 
+ #     safari_pinned_tab: "<link / abs url>" 
+
