@@ -3,7 +3,7 @@ title: "NFT Creation"
 description: "Showing my NFT creations"
 draft: false
 dateString: May 2023
-weight: 105
+weight: 103
 showToc: true 
 cover:
     image: "posts/thirdpost/nft.jpg"
