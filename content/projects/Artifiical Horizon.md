@@ -15,7 +15,8 @@ The project centres on Fly-by-Wire (FBW) technology, a system that supersedes tr
 
 ![](/projects/plane/draft.jpg)
 
-The code for this project is written in C# and is publicly accessible for download from my GitHub profile.
+The code for this project is written in C# and 
+[**you can download It from here**](https://github.com/hmandaliya27/Plane-GUI/)
 
 - **While the code is not entirely complete, I welcome any modifications or adjustments you may wish to make to better suit your needs.**
 
