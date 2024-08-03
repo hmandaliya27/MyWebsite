@@ -13,12 +13,16 @@ cover:
 # Effective Leadership in Cybersecurity: Managing a Network Breach and Data Migration
 In the ever-evolving landscape of cyber threats, a network breach poses significant challenges. Here, we delve into a case study where a team of employees and contractors successfully navigated a department-wide network breach. The process involved the organisation of wiping and re-imaging 500 laptops and 120 desktops, and migrating over 10TB of user data from local storage to OneDrive in compliance with NHS data and security protocols.
 
+![](/projects/breach/chart.jpg)
+
 ### Leading the Team Through the Network Breach
 Immediate Response and Coordination
 Upon discovering the network breach, swift action was paramount. The team was promptly mobilised, and responsibilities were clearly defined to ensure an organised and efficient response. The primary objective was to mitigate the breach, secure the network, and restore normal operations as quickly as possible.
 
 ### Wiping and Re-imaging Devices
-To prevent further compromise, 500 laptops and 120 desktops were systematically wiped and re-imaged. This process involved ensuring all critical data was securely backed up, using secure methods to completely wipe the existing data, re-imaging the devices with clean, updated operating systems, and conducting thorough checks to ensure all devices were free of malware and functioning correctly post-re-image.
+To prevent further compromise, 500 laptops and 120 desktops were systematically wiped and re-imaged. This process involved ensuring all critical data was securely backed up, using secure methods to completely wipe the existing data, re-imaging the devices with clean, updated operating systems, and conducting thorough checks to ensure all devices were free of malware and functioning correctly post-re-image. **BitRaser** was utilised for data erasure, adhering to the **British HMG IS5 (Enhanced)** Data Erasure Standards, ensuring complete and secure removal of data. 
+
+![](/projects/breach/bitraser.jpg)
 
 ### Migrating Data to OneDrive
 Compliance with NHS Data and Security Protocols
