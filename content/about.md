@@ -12,5 +12,5 @@ In addition to my academic pursuits, I relish creating content for YouTube, honi
 
 ![](/about/test2.png)
 
-**Happiness can be found even in the darkest of times.**
+**Happiness can be found even in the darkest of times.** :magic_wand:
 
