@@ -7,7 +7,7 @@ Having recently graduated from Kingston University, I earned a first-class honou
 
 In addition to my academic pursuits, I relish creating content for YouTube, honing my video editing techniques, and skilfully utilising Photoshop.
 
-- I'm a **Potterhead** and a huge fan of Harry Potter!.
+- I'm a **Potterhead** and a huge fan of Harry Potter.
 
 
 ![](/about/test2.png)
