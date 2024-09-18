@@ -2,26 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Projects on Harshal Mandaliya</title>
-    <link>https://harshalmandaliya.com/projects/</link>
+    <link>http://localhost:1313/projects/</link>
     <description>Recent content in Projects on Harshal Mandaliya</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://harshalmandaliya.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Artificial Horizon</title>
-      <link>https://harshalmandaliya.com/projects/artifiical-horizon/</link>
+      <title>Network Breach</title>
+      <link>http://localhost:1313/projects/cyber-attack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://harshalmandaliya.com/projects/artifiical-horizon/</guid>
-      <description>Plane gui</description>
+      <guid>http://localhost:1313/projects/cyber-attack/</guid>
+      <description>Managing a Network Breach and Data Migration</description>
     </item>
     
     <item>
       <title>Royal Navy Challenge</title>
-      <link>https://harshalmandaliya.com/projects/royal-navy-challenge/</link>
+      <link>http://localhost:1313/projects/royal-navy-challenge/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://harshalmandaliya.com/projects/royal-navy-challenge/</guid>
+      <guid>http://localhost:1313/projects/royal-navy-challenge/</guid>
       <description>STEM engineering challenge</description>
+    </item>
+    
+    <item>
+      <title>Artificial Horizon</title>
+      <link>http://localhost:1313/projects/artifiical-horizon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/projects/artifiical-horizon/</guid>
+      <description>Plane gui</description>
     </item>
     
   </channel>
