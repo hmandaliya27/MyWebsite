@@ -23,7 +23,7 @@ Mid-journey AI can also refer to the stage in which an organization or individua
 
 
 # How to generate images?
-Currently the only way to generate images is from its **discord server** (do note that it’s a beta server , changes are constantly being made). Make an account if you haven’t already and join with link provided.
+At present, the only way to generate images is through its **Discord server**. Please note that it is a beta server, so changes are continuously being made. If you haven't already, create an account and join using the provided link.
 
 >  https://discord.com/invite/midjourney
 
