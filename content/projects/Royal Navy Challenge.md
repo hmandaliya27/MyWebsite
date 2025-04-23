@@ -4,7 +4,7 @@ description: "STEM engineering challenge"
 draft: false
 dateString: March 2019
 showToc: true
-weight: 203
+weight: 304
 cover:
     image: "projects/boat/boatcover.jpg"
 --- 

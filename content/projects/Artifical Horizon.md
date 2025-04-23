@@ -2,7 +2,7 @@
 title: "Artificial Horizon"
 description: "Plane gui"
 draft: false
-weight: 205
+weight: 305
 dateString: May 2019
 cover:
     image: "projects/plane/ai.jpg"
