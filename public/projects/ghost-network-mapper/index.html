@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Ghost Network Mapper | Harshal Mandaliya</title>
+<meta name="keywords" content="">
+<meta name="description" content="Discover, identity and list exposed ports on a network">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/projects/ghost-network-mapper/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.96899f97d8f8189d0ff2f895ef7d104ef2a38fa0104562f554c249c6476eda64.css" integrity="sha256-lomfl9j4GJ0P8viV730QTvKjj6AQRWL1VMJJxkdu2mQ=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/ghost-network-mapper/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header sticky-header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Harshal Mandaliya (Alt + H)">Harshal Mandaliya</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Ghost Network Mapper
+    </h1>
+    <div class="post-description">
+      Discover, identity and list exposed ports on a network
+    </div>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#overview" aria-label="Overview">Overview</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#objectives" aria-label="Objectives">Objectives</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#how-it-works" aria-label="How it Works">How it Works</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#network-discovery" aria-label="Network Discovery">Network Discovery</a></li>
+                <li>
+                    <a href="#host-identification" aria-label="Host Identification">Host Identification</a></li>
+                <li>
+                    <a href="#port-scanning" aria-label="Port Scanning">Port Scanning</a></li>
+                <li>
+                    <a href="#web-interface" aria-label="Web Interface">Web Interface</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#network-visualisation" aria-label="Network Visualisation">Network Visualisation</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#device-table" aria-label="Device Table">Device Table</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#environment-setup" aria-label="Environment Setup">Environment Setup</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#setup" aria-label="Setup">Setup</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#tools" aria-label="Tools">Tools</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#technologies-used" aria-label="Technologies Used">Technologies Used</a></li>
+                <li>
+                    <a href="#skills-demonstrated" aria-label="Skills Demonstrated">Skills Demonstrated</a></li>
+                <li>
+                    <a href="#ethical-use" aria-label="Ethical Use">Ethical Use</a></li>
+                <li>
+                    <a href="#future-improvements" aria-label="Future Improvements">Future Improvements</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a></li>
+                <li>
+                    <a href="#download-project" aria-label="Download Project">Download Project</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h1>
+<p>Ghost Network Mapper is a lightweight network reconnaissance tool that discovers devices connected to a local Wi-Fi network, identifies open ports, and highlights services that may be exposed externally.</p>
+<p>The tool combines <strong>Python, Nmap, and a web-based visual interface</strong> to transform traditional command-line scan output into a simple and interactive dashboard. Instead of manually parsing Nmap results, users can view devices, ports, and exposure risks through a clear visual network map and structured device table.</p>
+<p>This project was built to better understand how attackers enumerate networks and how defenders can quickly identify potential attack surfaces within their own infrastructure.</p>
+<h3 id="objectives">Objectives<a hidden class="anchor" aria-hidden="true" href="#objectives">#</a></h3>
+<p>The goal of this project was to:</p>
+<p>•	Discover active devices on a local network</p>
+<p>•	Identify open ports running on each host</p>
+<p>•	Detect potentially exposed services</p>
+<p>•	Present results through an interactive web interface</p>
+<p>•	Gain practical experience integrating network scanning tools into Python applications</p>
+<h1 id="how-it-works">How it Works<a hidden class="anchor" aria-hidden="true" href="#how-it-works">#</a></h1>
+<h3 id="network-discovery">Network Discovery<a hidden class="anchor" aria-hidden="true" href="#network-discovery">#</a></h3>
+<p>The tool uses <strong>Nmap ARP scanning</strong> to identify active hosts within a local subnet. ARP scanning is particularly effective on local networks because it operates at the link layer and can detect devices even when ICMP responses are disabled.
+Each discovered device is then processed for additional enumeration.</p>
+<h3 id="host-identification">Host Identification<a hidden class="anchor" aria-hidden="true" href="#host-identification">#</a></h3>
+<p>Once a device is discovered, the application attempts to resolve its <strong>hostname</strong> using local DNS or reverse lookup techniques. If a hostname cannot be determined, the tool labels the device as unknown.
+This helps provide better visibility into what each device may represent on the network.</p>
+<h3 id="port-scanning">Port Scanning<a hidden class="anchor" aria-hidden="true" href="#port-scanning">#</a></h3>
+<p>For every discovered host, the tool performs a scan of the <strong>top commonly used ports</strong> using Nmap.</p>
+<blockquote>
+<p>This helps identify services running on the device such as:</p>
+</blockquote>
+<p>•	HTTP / HTTPS</p>
+<p>•	SSH
+•	Remote access services</p>
+<p>•	IoT device services</p>
+<p>•	Media streaming ports</p>
+<p>Understanding which services are active helps determine potential entry points attackers could target.</p>
+<h3 id="web-interface">Web Interface<a hidden class="anchor" aria-hidden="true" href="#web-interface">#</a></h3>
+<p>To make the data easier to interpret, the project includes a <strong>Flask-based web interface</strong>.
+The interface provides two main views.</p>
+<h1 id="network-visualisation">Network Visualisation<a hidden class="anchor" aria-hidden="true" href="#network-visualisation">#</a></h1>
+<p>A graphical network map displays the router at the centre with connected devices branching outward. Each device appears as a node representing a detected host.</p>
+<p><img loading="lazy" src="/projects/ghostnetworkmapper/127.0.0.1_5000_.jpg" alt=""  />
+</p>
+<p>This visual representation makes it easier to quickly understand the structure of the network.</p>
+<h3 id="device-table">Device Table<a hidden class="anchor" aria-hidden="true" href="#device-table">#</a></h3>
+<p>Below the visualisation is a structured table showing:</p>
+<p>•	IP address</p>
+<p>•	Hostname</p>
+<p>•	Open ports</p>
+<p>•	Exposed ports</p>
+<p>This format allows users to quickly review network activity and identify devices running potentially risky services.</p>
+<h1 id="environment-setup">Environment Setup<a hidden class="anchor" aria-hidden="true" href="#environment-setup">#</a></h1>
+<h3 id="setup">Setup<a hidden class="anchor" aria-hidden="true" href="#setup">#</a></h3>
+<p>A) Open the project folder - <strong>cd path/to/Ghost-Network-Mapper</strong></p>
+<p>B) Activate your virtual environment - <strong>Venv\Scripts\activate</strong></p>
+<p>C) Start the application - <strong>python app.py</strong></p>
+<p><img loading="lazy" src="/projects/ghostnetworkmapper/Setup.png" alt=""  />
+</p>
+<h1 id="tools">Tools<a hidden class="anchor" aria-hidden="true" href="#tools">#</a></h1>
+<h3 id="technologies-used">Technologies Used<a hidden class="anchor" aria-hidden="true" href="#technologies-used">#</a></h3>
+<p>•	Python – application logic and automation</p>
+<p>•	Flask – lightweight web server and dashboard</p>
+<p>•	Nmap – network scanning and port enumeration</p>
+<p>•	JavaScript (Vis.js) – network visualisation</p>
+<p>•	HTML / CSS – user interface</p>
+<h3 id="skills-demonstrated">Skills Demonstrated<a hidden class="anchor" aria-hidden="true" href="#skills-demonstrated">#</a></h3>
+<p>This project demonstrates practical skills relevant to cybersecurity and network analysis, including:</p>
+<p>•	Network enumeration and host discovery</p>
+<p>•	Port scanning and service identification</p>
+<p>•	Integrating external security tools into Python workflows</p>
+<p>•	Building simple security dashboards</p>
+<p>•	Understanding network exposure and attack surfaces</p>
+<h3 id="ethical-use">Ethical Use<a hidden class="anchor" aria-hidden="true" href="#ethical-use">#</a></h3>
+<p>This tool is intended for <strong>educational and defensive security purposes only</strong>. It should only be used on networks that you own or have explicit permission to analyse.</p>
+<h3 id="future-improvements">Future Improvements<a hidden class="anchor" aria-hidden="true" href="#future-improvements">#</a></h3>
+<p>Potential enhancements for the project include:</p>
+<p>•	Automatic subnet detection</p>
+<p>•	Device fingerprinting and operating system identification</p>
+<p>•	Exporting scan results</p>
+<p>•	Real-time scanning updates</p>
+<p>•	Service version detection for vulnerability analysis</p>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p>Ghost Network Mapper was built to explore how devices on a local network can be discovered and visualised in a simple, interactive way. By combining Python-based network scanning with a lightweight web interface, the project demonstrates how raw scan data can be transformed into a clear visual representation of connected devices.</p>
+<p>The tool highlights how concepts such as device discovery, port scanning, and network topology mapping can be integrated into a single application. It also shows how backend scripts and frontend visualisation can work together to present real-time information in a more intuitive format.</p>
+<p>Overall, the project provided practical experience with Python, network scanning techniques, and building a small web-based interface for security and monitoring purposes. It also reinforced the importance of handling network information responsibly and ensuring sensitive details are not exposed when sharing or demonstrating security-related tools.</p>
+<h1 id="download-project">Download Project<a hidden class="anchor" aria-hidden="true" href="#download-project">#</a></h1>
+<p>You can access this project and try it out yourself but remember to insert your IP address in the scanner.py file as mentioned.</p>
+<p><a href="https://github.com/hmandaliya27/Ghost-Network-Mapper">https://github.com/hmandaliya27/Ghost-Network-Mapper</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2026 <a href="http://localhost:1313/">Harshal Mandaliya</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Royal Navy Challenge | Harshal Mandaliya</title>
+<title>Changing IP Addresses with Tor - Kali Linux | Harshal Mandaliya</title>
 <meta name="keywords" content="">
-<meta name="description" content="STEM engineering challenge">
+<meta name="description" content="Exploring Tor-based IP rotation on Kali and how anonymised traffic behaves in practice">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/projects/royal-navy-challenge/">
+<link rel="canonical" href="http://localhost:1313/projects/changeip/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.96899f97d8f8189d0ff2f895ef7d104ef2a38fa0104562f554c249c6476eda64.css" integrity="sha256-lomfl9j4GJ0P8viV730QTvKjj6AQRWL1VMJJxkdu2mQ=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -20,7 +20,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/royal-navy-challenge/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/changeip/">
 <noscript>
     <style>
         #theme-toggle,
@@ -126,10 +126,10 @@
   <header class="post-header">
     
     <h1 class="post-title">
-      Royal Navy Challenge
+      Changing IP Addresses with Tor - Kali Linux
     </h1>
     <div class="post-description">
-      STEM engineering challenge
+      Exploring Tor-based IP rotation on Kali and how anonymised traffic behaves in practice
     </div>
     <div class="post-meta">
 
@@ -142,54 +142,91 @@
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#introduction" aria-label="Introduction">Introduction</a></li>
+                    <a href="#overview" aria-label="Overview">Overview</a></li>
                 <li>
-                    <a href="#purpose-of-the-challenge" aria-label="Purpose of the challenge">Purpose of the challenge</a></li>
-                <li>
-                    <a href="#the-challenge" aria-label="The challenge">The challenge</a><ul>
+                    <a href="#installing-tor" aria-label="Installing Tor">Installing Tor</a><ul>
                         <ul>
                         
                 <li>
-                    <a href="#project-execution" aria-label="Project Execution">Project Execution</a></li>
+                    <a href="#python-and-tornet-setup" aria-label="Python and Tornet Setup">Python and Tornet Setup</a></li>
                 <li>
-                    <a href="#assembly-and-testing" aria-label="Assembly and Testing">Assembly and Testing</a></li>
+                    <a href="#browser-configuration-firefox" aria-label="Browser Configuration (Firefox)">Browser Configuration (Firefox)</a></li>
                 <li>
-                    <a href="#performance" aria-label="Performance">Performance</a></li></ul>
+                    <a href="#running-tornet" aria-label="Running Tornet">Running Tornet</a></li>
+                <li>
+                    <a href="#verifying-tor-connectivity" aria-label="Verifying Tor Connectivity">Verifying Tor Connectivity</a></li></ul>
                     </ul>
                 </li>
                 <li>
-                    <a href="#learning-outcomes" aria-label="Learning Outcomes">Learning Outcomes</a>
+                    <a href="#testing-ip-and-dns-leakage" aria-label="Testing IP and DNS Leakage">Testing IP and DNS Leakage</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
                 </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><h1 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h1>
-<p>In March 2019, a STEM competition held aboard HMS Sultan, centred around the Royal Navy’s integrated systems, that I took part when I was in college. In this post, I aim to provide a comprehensive account of my involvement in this fascinating project.</p>
-<h1 id="purpose-of-the-challenge">Purpose of the challenge<a hidden class="anchor" aria-hidden="true" href="#purpose-of-the-challenge">#</a></h1>
-<p>Designed for young people aged between 14 and 21, the annual competition offers a unique opportunity to grapple with real-world challenges. Each year presents a new theme that aligns with current technological advancements. Participants also have the exceptional experience of spending a day immersed in naval life and an overnight stay on board HMS Bristol.</p>
-<h1 id="the-challenge">The challenge<a hidden class="anchor" aria-hidden="true" href="#the-challenge">#</a></h1>
-<p>Our task involved an integrated system where two remote-controlled (RC) vehicles a land-based recovery vehicle and a ship-vessel had to collaborate to retrieve a stranded helicopter and return it to safety, all manoeuvred using a single controller.</p>
-<h3 id="project-execution">Project Execution<a hidden class="anchor" aria-hidden="true" href="#project-execution">#</a></h3>
-<p>Over a span of several months, our team designed and constructed the RC vehicles. We were given a list of potential equipment, complete with costs, allowing us to exercise budget control meticulously. After conducting extensive research on the necessary core materials, we moved to the design phase, employing AutoCAD and Solidworks 3D for initial sketches. While we devised multiple designs, each with its own strengths and weaknesses, we eventually settled on a final version.</p>
-<h3 id="assembly-and-testing">Assembly and Testing<a hidden class="anchor" aria-hidden="true" href="#assembly-and-testing">#</a></h3>
-<p>Upon receiving the materials, we commenced assembly. The vessel was crafted using blue styrofoam to ensure it was both waterproof and lightweight. An acrylic layer added extra buoyancy. Electronic components such as rudder, servo, battery etc, were carefully housed within the vessel&rsquo;s base. Likewise, the car was designed to be compact and lightweight to facilitate its placement on the vessel alongside the &ldquo;downed&rdquo; helicopter.</p>
-<h3 id="performance">Performance<a hidden class="anchor" aria-hidden="true" href="#performance">#</a></h3>
-<p>We made two attempts to complete the challenge, one in the morning and another in the afternoon, which afforded us some time to refine our design. Despite our efforts, we were unsuccessful on both counts. Although the vessel operated well in water and the car successfully disembarked to collect the helicopter, we encountered design limitations. The crane hook could only move vertically, lacking the ability to manoeuvre in multiple directions. Additionally, the vessel&rsquo;s propulsion system only allowed for forward motion, making control challenging.</p>
-<p><img loading="lazy" src="/projects/boat/vessel.jpg" alt=""  />
-</p>
-<p>Much like the vessel, the car was designed with compactness and lightness in mind, as both it and the &ldquo;downed&rdquo; helicopter needed to share space on the vessel without compromising its stability or operability.</p>
-<p><img loading="lazy" src="/projects/boat/rc1.jpg" alt=""  />
+  <div class="post-content"><h1 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h1>
+<p>This project demonstrates how <strong>Tor (The Onion Router)</strong> can be used on <strong>Kali Linux</strong> to automatically rotate a public IP address at defined intervals. By routing browser traffic through the Tor network and using a lightweight automation tool, it is possible to observe frequent IP changes while ensuring DNS information remains protected. The aim of this project is to understand how Tor-based anonymisation works in practice, how IP rotation behaves, and how DNS leaks can be avoided when browsing through the Tor network.</p>
+<h1 id="installing-tor">Installing Tor<a hidden class="anchor" aria-hidden="true" href="#installing-tor">#</a></h1>
+<p>Tor is installed using the default package manager. Once installed, the Tor service is started and its status is verified to ensure it is running correctly. Running Tor as a system service allows circuits to be rebuilt automatically without manual intervention.
+At this stage, Tor is active in the background but not yet being used by the browser.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/linux1.jpg" alt=""  />
 
-<img loading="lazy" src="/projects/boat/rc2.jpg" alt=""  />
+<img loading="lazy" src="/projects/ChangeIP/linux2.jpg" alt=""  />
 </p>
+<h3 id="python-and-tornet-setup">Python and Tornet Setup<a hidden class="anchor" aria-hidden="true" href="#python-and-tornet-setup">#</a></h3>
+<p>Python is required to run the IP rotation tool. Kali Linux already includes Python by default, so no additional installation is necessary.
+The next step is installing tornet, a lightweight script that forces Tor to request new circuits at a defined interval. Older versions of tornet did not require additional flags, but newer environments may require system package overrides.</p>
+<p>This tool allows:</p>
 <blockquote>
-<p>There was a total of two attempts to complete the task. One was in the morning, and the other took place in the afternoon (which gave us time to improve and modify the design from the first attempt.</p>
+<p>Automated IP rotation , Custom rotation intervals &amp; Unlimited or fixed IP changes</p>
 </blockquote>
-<p>However, we were <strong>unsuccessful on both tries</strong>. The vessel was successfully moving in the water, and the car was able to leave the vessel and collect the down-bird helicopter. But you must be wondering what the issue was? Well&hellip; the crane hook could only move in a straight motion, either up or down. It could have been better if it had been able to move directions and not locked to a single axis. The other issue was the vessel&rsquo;s trust was a water flush, so it only could move forward, it was difficult to manage (and we managed to control it), but the design could have been tweaked.</p>
-<h1 id="learning-outcomes">Learning Outcomes<a hidden class="anchor" aria-hidden="true" href="#learning-outcomes">#</a></h1>
-<p>The project was a significant learning curve, enriching my experience in multiple facets, from design and assembly to problem-solving and time management. Despite the setbacks, the entire endeavour was immensely enjoyable and instructive, sharpening my skills and deepening my understanding of what it takes to execute a complex project.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/linux3.jpg" alt=""  />
+
+<img loading="lazy" src="/projects/ChangeIP/linux4.jpg" alt=""  />
+</p>
+<h3 id="browser-configuration-firefox">Browser Configuration (Firefox)<a hidden class="anchor" aria-hidden="true" href="#browser-configuration-firefox">#</a></h3>
+<p>Before using tornet, the browser must be configured correctly to avoid DNS leaks.
+Firefox is configured to route all traffic through a SOCKS v5 proxy provided by Tor. Crucially, <strong>DNS over SOCKS v5 is enabled</strong>, ensuring DNS queries are also anonymised rather than being resolved locally.
+This step is essential. Without it, the public IP may appear hidden while DNS requests still reveal identifying information.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/browser.jpg" alt=""  />
+</p>
+<h3 id="running-tornet">Running Tornet<a hidden class="anchor" aria-hidden="true" href="#running-tornet">#</a></h3>
+<p>With Tor running and the browser correctly configured, tornet can now be executed.
+Two key parameters are used:</p>
+<p>•	<strong>&ndash;interval</strong> – defines how often a new Tor circuit is requested (in seconds)</p>
+<p>•	<strong>&ndash;count</strong> – defines how many IP changes occur</p>
+<p>In this demonstration, the interval is set to <strong>3 seconds</strong>. The count is set to <strong>0</strong>, meaning infinite rotation. As a result, the exit IP changes every three seconds continuously.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/linux6.jpg" alt=""  />
+</p>
+<h3 id="verifying-tor-connectivity">Verifying Tor Connectivity<a hidden class="anchor" aria-hidden="true" href="#verifying-tor-connectivity">#</a></h3>
+<p>Once tornet is active, the browser is opened and checked to confirm it is connected to the Tor network.
+Tor’s confirmation page verifies that traffic is successfully being routed through Tor and not directly through the local network.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/tor1.jpg" alt=""  />
+</p>
+<h1 id="testing-ip-and-dns-leakage">Testing IP and DNS Leakage<a hidden class="anchor" aria-hidden="true" href="#testing-ip-and-dns-leakage">#</a></h1>
+<p>To validate the setup, an external IP and DNS testing website is used.</p>
+<p>The results show:</p>
+<blockquote>
+<p>The public IP address does not match the real network IP</p>
+</blockquote>
+<blockquote>
+<p>IP addresses change frequently upon refresh</p>
+</blockquote>
+<blockquote>
+<p>Extended DNS tests confirm no DNS leakage</p>
+</blockquote>
+<p>Refreshing the page repeatedly shows different exit nodes, confirming that IP rotation is working as expected and DNS information remains hidden.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/dns1.jpg" alt=""  />
+
+<img loading="lazy" src="/projects/ChangeIP/dns2.jpg" alt=""  />
+
+<img loading="lazy" src="/projects/ChangeIP/dns3.jpg" alt=""  />
+</p>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p>This project demonstrates a practical implementation of Tor-based IP rotation on Kali Linux, highlighting both IP anonymisation and DNS leak prevention. It shows how easily Tor circuits can be rebuilt at short intervals and why IP-based identification alone is unreliable when analysing anonymised traffic. From a cyber-security perspective, this reinforces the importance of behavioural analysis over IP trust, understanding how Tor traffic appears in logs and correct proxy and DNS configuration.</p>
 
 
   </div>

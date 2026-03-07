@@ -8,11 +8,17 @@
   </url><url>
     <loc>http://localhost:1313/posts/first-post/</loc>
   </url><url>
+    <loc>http://localhost:1313/projects/ghost-network-mapper/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/changeip/</loc>
+  </url><url>
     <loc>http://localhost:1313/projects/cyber-attack/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/wireshark/</loc>
   </url><url>
     <loc>http://localhost:1313/projects/royal-navy-challenge/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/artifiical-horizon/</loc>
+    <loc>http://localhost:1313/projects/artifical-horizon/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
