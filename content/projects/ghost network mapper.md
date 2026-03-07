@@ -11,7 +11,7 @@ cover:
 
 
 # Overview
-Ggghost Network Mapper is a lightweight network reconnaissance tool that discovers devices connected to a local Wi-Fi network, identifies open ports, and highlights services that may be exposed externally.
+Ghost Network Mapper is a lightweight network reconnaissance tool that discovers devices connected to a local Wi-Fi network, identifies open ports, and highlights services that may be exposed externally.
 
 The tool combines **Python, Nmap, and a web-based visual interface** to transform traditional command-line scan output into a simple and interactive dashboard. Instead of manually parsing Nmap results, users can view devices, ports, and exposure risks through a clear visual network map and structured device table.
 
