@@ -121,4 +121,3 @@ This project demonstrates how a used Dell Small Form Factor PC can be repurposed
 From a home-lab perspective, the project highlights how older hardware can continue to provide value through self-hosted storage, media services, and future backup solutions while remaining significantly cheaper than purpose-built NAS hardware.
 
 ![](/projects/nasserver/nasoverview.png)
-![](/projects/nasserver/test.jpg)
