@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Building a NAS Server from a Dell SFF PC | Harshal Mandaliya</title>
+<meta name="keywords" content="">
+<meta name="description" content="Repurposing an old Dell Small Form Factor PC into a cost-effective home NAS server">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/projects/nas-server/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/nas-server/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header sticky-header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Harshal Mandaliya (Alt + H)">Harshal Mandaliya</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Building a NAS Server from a Dell SFF PC
+    </h1>
+    <div class="post-description">
+      Repurposing an old Dell Small Form Factor PC into a cost-effective home NAS server
+    </div>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#overview" aria-label="Overview">Overview</a></li>
+                <li>
+                    <a href="#hardware-configuration" aria-label="Hardware Configuration">Hardware Configuration</a></li>
+                <li>
+                    <a href="#installing-debian-linux" aria-label="Installing Debian Linux">Installing Debian Linux</a></li>
+                <li>
+                    <a href="#expanding-storage-capacity" aria-label="Expanding Storage Capacity">Expanding Storage Capacity</a></li>
+                <li>
+                    <a href="#repurposing-the-pcie-slot-gpu-to-nvme-adapter" aria-label="Repurposing the PCIe Slot: GPU to NVMe Adapter">Repurposing the PCIe Slot: GPU to NVMe Adapter</a></li>
+                <li>
+                    <a href="#storage-configuration" aria-label="Storage Configuration">Storage Configuration</a></li>
+                <li>
+                    <a href="#network-shares" aria-label="Network Shares">Network Shares</a></li>
+                <li>
+                    <a href="#why-build-instead-of-buy" aria-label="Why Build Instead of Buy?">Why Build Instead of Buy?</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h1>
+<p>This project demonstrates how an old <strong>Dell Small Form Factor (SFF)</strong> desktop was transformed into a fully functional <strong>Network Attached Storage (NAS)</strong> server. Rather than purchasing an expensive NAS enclosure, existing hardware was repurposed to provide dedicated storage for files, media, and backups.</p>
+<p>The objective was to create a low-cost storage solution using readily available hardware while extending the life of a system that would otherwise remain unused.</p>
+<h1 id="hardware-configuration">Hardware Configuration<a hidden class="anchor" aria-hidden="true" href="#hardware-configuration">#</a></h1>
+<p>The NAS consists of three storage devices, each serving a dedicated purpose.</p>
+<p>The storage configuration includes:</p>
+<blockquote>
+<p><strong>256GB NVMe SSD</strong> – Debian Linux operating system</p>
+</blockquote>
+<blockquote>
+<p><strong>2TB HDD</strong> – General data storage</p>
+</blockquote>
+<blockquote>
+<p><strong>2TB SATA SSD</strong> – Media storage</p>
+</blockquote>
+<blockquote>
+<p><strong>512GB NVMe SSD</strong> – Backup / Media storage</p>
+</blockquote>
+<p>Using separate drives for the operating system, media, and data helps keep storage organised while improving overall responsiveness.</p>
+<h1 id="installing-debian-linux">Installing Debian Linux<a hidden class="anchor" aria-hidden="true" href="#installing-debian-linux">#</a></h1>
+<p>Debian Linux was selected as the operating system due to its stability, lightweight resource requirements, and extensive software support.</p>
+<p>The operating system was installed on the NVMe SSD, providing fast boot times and responsive system performance. Once installed, the system was configured for storage services. Future remote support will be implemented using tailscale.</p>
+<p><img loading="lazy" src="/projects/nasserver/satassdcaddy.png" alt=""  />
+
+<img loading="lazy" src="/projects/nasserver/dvd.png" alt=""  />
+</p>
+<h1 id="expanding-storage-capacity">Expanding Storage Capacity<a hidden class="anchor" aria-hidden="true" href="#expanding-storage-capacity">#</a></h1>
+<p>One challenge encountered during the build was finding space for the additional 2TB SATA SSD.</p>
+<p>The Dell SFF chassis did not provide a dedicated mounting location for another drive. To overcome this limitation, the DVD drive was removed and replaced with a SATA SSD caddy adapter (no additional cables were needed as the DVD SATA cables were reused). As optical drives are rarely used today, the DVD bay provided an ideal solution for adding additional storage without modifying the chassis.</p>
+<p><img loading="lazy" src="/projects/nasserver/removingdvd.png" alt=""  />
+
+<img loading="lazy" src="/projects/nasserver/caddyinstall.png" alt=""  />
+</p>
+<h1 id="repurposing-the-pcie-slot-gpu-to-nvme-adapter">Repurposing the PCIe Slot: GPU to NVMe Adapter<a hidden class="anchor" aria-hidden="true" href="#repurposing-the-pcie-slot-gpu-to-nvme-adapter">#</a></h1>
+<p>Since the NAS runs headless with no need for dedicated graphics output, the graphics card was removed to free up the PCIe slot for additional storage.</p>
+<p>In its place, a <strong>PCIe-to-NVMe adapter</strong> was installed, allowing an extra NVMe SSD (512GB) to be added to the system. This was a straightforward swap — the GPU was unseated from the PCIe x16 slot, and the adapter card with the NVMe drive attached was slotted in its place.</p>
+<p>This change offered a couple of clear benefits:</p>
+<blockquote>
+<p>Freed up the DVD bay approach as the only option for expansion — the PCIe slot became a second avenue for adding storage</p>
+</blockquote>
+<blockquote>
+<p>No loss of functionality, since the NAS never required graphics acceleration in the first place</p>
+</blockquote>
+<blockquote>
+<p>Significantly more storage headroom without touching the existing HDD, SATA SSD, or boot NVMe</p>
+</blockquote>
+<p><img loading="lazy" src="/projects/nasserver/PCIeAdapter.jpg" alt=""  />
+
+<img loading="lazy" src="/projects/nasserver/Slot.jpg" alt=""  />
+</p>
+<h1 id="storage-configuration">Storage Configuration<a hidden class="anchor" aria-hidden="true" href="#storage-configuration">#</a></h1>
+<p>Once all drives were installed, storage was organised according to its intended purpose.</p>
+<p>The <strong>2TB HDD</strong> is used for general file storage and shared data across the network.</p>
+<p>The <strong>2TB SATA SSD</strong> is dedicated to media content, allowing applications such as Plex to access media files quickly.</p>
+<p>The <strong>NVMe SSD</strong> hosts the OpenMediaVault operating system and currently has additional capacity available. I&rsquo;ve already setup the SSD to be used as additional storage but won&rsquo;t use it for now. In the future, unused space may be repurposed as a backup destination for important files and system snapshots.</p>
+<p>The new <strong>PCIe NVMe SSD</strong> adds further flexibility to the storage pool, which will be used as a backup folder.</p>
+<p><img loading="lazy" src="/projects/nasserver/openmediavault.png" alt=""  />
+</p>
+<h1 id="network-shares">Network Shares<a hidden class="anchor" aria-hidden="true" href="#network-shares">#</a></h1>
+<p>The NAS was configured to provide shared storage across the local network.</p>
+<p>This allows files to be accessed centrally from multiple devices without relying on cloud services or external storage devices. Separating media and data storage also simplifies management and future expansion. In fact the plugin MiniDLNA, is used to share it across all platforms which include computer, phones, TV and consoles (as tested and worked).</p>
+<p><img loading="lazy" src="/projects/nasserver/connection.png" alt=""  />
+</p>
+<h1 id="why-build-instead-of-buy">Why Build Instead of Buy?<a hidden class="anchor" aria-hidden="true" href="#why-build-instead-of-buy">#</a></h1>
+<p>Dedicated NAS appliances can be expensive, particularly when storage drives are purchased separately.</p>
+<p>By reusing existing hardware, the total cost of the project was significantly reduced while still providing:</p>
+<blockquote>
+<p>Centralised storage</p>
+</blockquote>
+<blockquote>
+<p>Media hosting</p>
+</blockquote>
+<blockquote>
+<p>Backup capabilities</p>
+</blockquote>
+<blockquote>
+<p>Upgrade flexibility</p>
+</blockquote>
+<blockquote>
+<p>Full control over the operating system and services</p>
+</blockquote>
+<p>For many home users, a repurposed office PC provides more than enough performance for everyday NAS tasks. I can also turn it off when not in use to keep it more secure. Furthermore, I have setup magic packets so that I can turn on the server from my phone, rather then physically heading to turn on the power button.</p>
+<p><img loading="lazy" src="/projects/nasserver/plex.png" alt=""  />
+</p>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p>This project demonstrates how a used Dell Small Form Factor PC can be repurposed into a capable NAS server using a combination of SSD and HDD storage. By installing Debian Linux on an NVMe SSD and utilising both a hard drive and SATA SSD for dedicated storage roles, the system provides a practical and cost-effective alternative to a dedicated NAS appliance.</p>
+<p>From a home-lab perspective, the project highlights how older hardware can continue to provide value through self-hosted storage, media services, and future backup solutions while remaining significantly cheaper than purpose-built NAS hardware.</p>
+<p><img loading="lazy" src="/projects/nasserver/nasoverview.png" alt=""  />
+
+<img loading="lazy" src="/projects/nasserver/test.jpg" alt=""  />
+</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2026 <a href="http://localhost:1313/">Harshal Mandaliya</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

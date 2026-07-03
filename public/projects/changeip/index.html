@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Changing IP Addresses with Tor - Kali Linux | Harshal Mandaliya</title>
+<meta name="keywords" content="">
+<meta name="description" content="Exploring Tor-based IP rotation on Kali and how anonymised traffic behaves in practice">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/projects/changeip/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css" integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/changeip/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header sticky-header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Harshal Mandaliya (Alt + H)">Harshal Mandaliya</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Changing IP Addresses with Tor - Kali Linux
+    </h1>
+    <div class="post-description">
+      Exploring Tor-based IP rotation on Kali and how anonymised traffic behaves in practice
+    </div>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#overview" aria-label="Overview">Overview</a></li>
+                <li>
+                    <a href="#installing-tor" aria-label="Installing Tor">Installing Tor</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#python-and-tornet-setup" aria-label="Python and Tornet Setup">Python and Tornet Setup</a></li>
+                <li>
+                    <a href="#browser-configuration-firefox" aria-label="Browser Configuration (Firefox)">Browser Configuration (Firefox)</a></li>
+                <li>
+                    <a href="#running-tornet" aria-label="Running Tornet">Running Tornet</a></li>
+                <li>
+                    <a href="#verifying-tor-connectivity" aria-label="Verifying Tor Connectivity">Verifying Tor Connectivity</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#testing-ip-and-dns-leakage" aria-label="Testing IP and DNS Leakage">Testing IP and DNS Leakage</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h1>
+<p>This project demonstrates how <strong>Tor (The Onion Router)</strong> can be used on <strong>Kali Linux</strong> to automatically rotate a public IP address at defined intervals. By routing browser traffic through the Tor network and using a lightweight automation tool, it is possible to observe frequent IP changes while ensuring DNS information remains protected. The aim of this project is to understand how Tor-based anonymisation works in practice, how IP rotation behaves, and how DNS leaks can be avoided when browsing through the Tor network.</p>
+<h1 id="installing-tor">Installing Tor<a hidden class="anchor" aria-hidden="true" href="#installing-tor">#</a></h1>
+<p>Tor is installed using the default package manager. Once installed, the Tor service is started and its status is verified to ensure it is running correctly. Running Tor as a system service allows circuits to be rebuilt automatically without manual intervention.
+At this stage, Tor is active in the background but not yet being used by the browser.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/linux1.jpg" alt=""  />
+
+<img loading="lazy" src="/projects/ChangeIP/linux2.jpg" alt=""  />
+</p>
+<h3 id="python-and-tornet-setup">Python and Tornet Setup<a hidden class="anchor" aria-hidden="true" href="#python-and-tornet-setup">#</a></h3>
+<p>Python is required to run the IP rotation tool. Kali Linux already includes Python by default, so no additional installation is necessary.
+The next step is installing tornet, a lightweight script that forces Tor to request new circuits at a defined interval. Older versions of tornet did not require additional flags, but newer environments may require system package overrides.</p>
+<p>This tool allows:</p>
+<blockquote>
+<p>Automated IP rotation , Custom rotation intervals &amp; Unlimited or fixed IP changes</p>
+</blockquote>
+<p><img loading="lazy" src="/projects/ChangeIP/linux3.jpg" alt=""  />
+
+<img loading="lazy" src="/projects/ChangeIP/linux4.jpg" alt=""  />
+</p>
+<h3 id="browser-configuration-firefox">Browser Configuration (Firefox)<a hidden class="anchor" aria-hidden="true" href="#browser-configuration-firefox">#</a></h3>
+<p>Before using tornet, the browser must be configured correctly to avoid DNS leaks.
+Firefox is configured to route all traffic through a SOCKS v5 proxy provided by Tor. Crucially, <strong>DNS over SOCKS v5 is enabled</strong>, ensuring DNS queries are also anonymised rather than being resolved locally.
+This step is essential. Without it, the public IP may appear hidden while DNS requests still reveal identifying information.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/browser.jpg" alt=""  />
+</p>
+<h3 id="running-tornet">Running Tornet<a hidden class="anchor" aria-hidden="true" href="#running-tornet">#</a></h3>
+<p>With Tor running and the browser correctly configured, tornet can now be executed.
+Two key parameters are used:</p>
+<p>•	<strong>&ndash;interval</strong> – defines how often a new Tor circuit is requested (in seconds)</p>
+<p>•	<strong>&ndash;count</strong> – defines how many IP changes occur</p>
+<p>In this demonstration, the interval is set to <strong>3 seconds</strong>. The count is set to <strong>0</strong>, meaning infinite rotation. As a result, the exit IP changes every three seconds continuously.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/linux6.jpg" alt=""  />
+</p>
+<h3 id="verifying-tor-connectivity">Verifying Tor Connectivity<a hidden class="anchor" aria-hidden="true" href="#verifying-tor-connectivity">#</a></h3>
+<p>Once tornet is active, the browser is opened and checked to confirm it is connected to the Tor network.
+Tor’s confirmation page verifies that traffic is successfully being routed through Tor and not directly through the local network.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/tor1.jpg" alt=""  />
+</p>
+<h1 id="testing-ip-and-dns-leakage">Testing IP and DNS Leakage<a hidden class="anchor" aria-hidden="true" href="#testing-ip-and-dns-leakage">#</a></h1>
+<p>To validate the setup, an external IP and DNS testing website is used.</p>
+<p>The results show:</p>
+<blockquote>
+<p>The public IP address does not match the real network IP</p>
+</blockquote>
+<blockquote>
+<p>IP addresses change frequently upon refresh</p>
+</blockquote>
+<blockquote>
+<p>Extended DNS tests confirm no DNS leakage</p>
+</blockquote>
+<p>Refreshing the page repeatedly shows different exit nodes, confirming that IP rotation is working as expected and DNS information remains hidden.</p>
+<p><img loading="lazy" src="/projects/ChangeIP/dns1.jpg" alt=""  />
+
+<img loading="lazy" src="/projects/ChangeIP/dns2.jpg" alt=""  />
+
+<img loading="lazy" src="/projects/ChangeIP/dns3.jpg" alt=""  />
+</p>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p>This project demonstrates a practical implementation of Tor-based IP rotation on Kali Linux, highlighting both IP anonymisation and DNS leak prevention. It shows how easily Tor circuits can be rebuilt at short intervals and why IP-based identification alone is unreliable when analysing anonymised traffic. From a cyber-security perspective, this reinforces the importance of behavioural analysis over IP trust, understanding how Tor traffic appears in logs and correct proxy and DNS configuration.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2026 <a href="http://localhost:1313/">Harshal Mandaliya</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
