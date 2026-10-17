@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ruby on Harshal Mandaliya</title>
-    <link>http://localhost:64294/tags/ruby/</link>
+    <link>http://localhost:49177/tags/ruby/</link>
     <description>Recent content in Ruby on Harshal Mandaliya</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="http://localhost:64294/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="http://localhost:49177/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Software Developer II (Backend Infrastructure)</title>
-      <link>http://localhost:64294/searchs/clio/</link>
+      <link>http://localhost:49177/searchs/clio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:64294/searchs/clio/</guid>
+      <guid>http://localhost:49177/searchs/clio/</guid>
       <description>Clio | Toronto, Canada</description>
     </item>
     

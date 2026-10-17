@@ -2,100 +2,96 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:64294/posts/nft/</loc>
+    <loc>http://localhost:49177/posts/nft/</loc>
   </url><url>
-    <loc>http://localhost:64294/posts/image-ai/</loc>
+    <loc>http://localhost:49177/posts/image-ai/</loc>
   </url><url>
-    <loc>http://localhost:64294/posts/first-post/</loc>
+    <loc>http://localhost:49177/posts/first-post/</loc>
   </url><url>
-    <loc>http://localhost:64294/projects/nas-server/</loc>
+    <loc>http://localhost:49177/projects/nas-server/</loc>
   </url><url>
-    <loc>http://localhost:64294/projects/ghost-network-mapper/</loc>
+    <loc>http://localhost:49177/projects/ghost-network-mapper/</loc>
   </url><url>
-    <loc>http://localhost:64294/projects/changeip/</loc>
+    <loc>http://localhost:49177/projects/changeip/</loc>
   </url><url>
-    <loc>http://localhost:64294/searchs/clio/</loc>
+    <loc>http://localhost:49177/searchs/clio/</loc>
   </url><url>
-    <loc>http://localhost:64294/projects/cyber-attack/</loc>
+    <loc>http://localhost:49177/projects/cyber-attack/</loc>
   </url><url>
-    <loc>http://localhost:64294/searchs/16bit/</loc>
+    <loc>http://localhost:49177/searchs/16bit/</loc>
   </url><url>
-    <loc>http://localhost:64294/searchs/buyerassist/</loc>
+    <loc>http://localhost:49177/searchs/buyerassist/</loc>
   </url><url>
-    <loc>http://localhost:64294/projects/wireshark/</loc>
+    <loc>http://localhost:49177/projects/wireshark/</loc>
   </url><url>
-    <loc>http://localhost:64294/searchs/tumunich/</loc>
+    <loc>http://localhost:49177/searchs/tumunich/</loc>
   </url><url>
-    <loc>http://localhost:64294/projects/royal-navy-challenge/</loc>
+    <loc>http://localhost:49177/projects/royal-navy-challenge/</loc>
   </url><url>
-    <loc>http://localhost:64294/projects/artifical-horizon/</loc>
+    <loc>http://localhost:49177/projects/artifical-horizon/</loc>
   </url><url>
-    <loc>http://localhost:64294/searchs/origin-health/</loc>
+    <loc>http://localhost:49177/searchs/origin-health/</loc>
   </url><url>
-    <loc>http://localhost:64294/searchs/iit-madras/</loc>
+    <loc>http://localhost:49177/searchs/iit-madras/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/ai/</loc>
+    <loc>http://localhost:49177/tags/ai/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/argocd/</loc>
+    <loc>http://localhost:49177/tags/argocd/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/aws/</loc>
+    <loc>http://localhost:49177/tags/aws/</loc>
   </url><url>
-    <loc>http://localhost:64294/categories/</loc>
+    <loc>http://localhost:49177/categories/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/ci/cd/</loc>
+    <loc>http://localhost:49177/tags/ci/cd/</loc>
   </url><url>
-    <loc>http://localhost:64294/contact/</loc>
+    <loc>http://localhost:49177/contact/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/docker/</loc>
+    <loc>http://localhost:49177/tags/docker/</loc>
   </url><url>
-    <loc>http://localhost:64294/experience/work-in-progress/</loc>
+    <loc>http://localhost:49177/tags/express/</loc>
   </url><url>
-    <loc>http://localhost:64294/experience/</loc>
+    <loc>http://localhost:49177/tags/grafana/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/express/</loc>
+    <loc>http://localhost:49177/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/grafana/</loc>
+    <loc>http://localhost:49177/tags/helm/</loc>
   </url><url>
-    <loc>http://localhost:64294/</loc>
+    <loc>http://localhost:49177/about/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/helm/</loc>
+    <loc>http://localhost:49177/tags/infrastructure/</loc>
   </url><url>
-    <loc>http://localhost:64294/about/</loc>
+    <loc>http://localhost:49177/tags/kubernetes/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/infrastructure/</loc>
+    <loc>http://localhost:49177/tags/langchain/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/kubernetes/</loc>
+    <loc>http://localhost:49177/tags/linux/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/langchain/</loc>
+    <loc>http://localhost:49177/tags/llm/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/linux/</loc>
+    <loc>http://localhost:49177/tags/ml/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/llm/</loc>
+    <loc>http://localhost:49177/tags/mongodb/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/ml/</loc>
+    <loc>http://localhost:49177/tags/nodejs/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/mongodb/</loc>
+    <loc>http://localhost:49177/tags/oauth2.0/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/nodejs/</loc>
+    <loc>http://localhost:49177/posts/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/oauth2.0/</loc>
+    <loc>http://localhost:49177/projects/</loc>
   </url><url>
-    <loc>http://localhost:64294/posts/</loc>
+    <loc>http://localhost:49177/tags/python/</loc>
   </url><url>
-    <loc>http://localhost:64294/projects/</loc>
+    <loc>http://localhost:49177/tags/ruby/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/python/</loc>
+    <loc>http://localhost:49177/tags/ruby-on-rails/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/ruby/</loc>
+    <loc>http://localhost:49177/search/</loc>
   </url><url>
-    <loc>http://localhost:64294/tags/ruby-on-rails/</loc>
+    <loc>http://localhost:49177/searchs/</loc>
   </url><url>
-    <loc>http://localhost:64294/search/</loc>
+    <loc>http://localhost:49177/tags/</loc>
   </url><url>
-    <loc>http://localhost:64294/searchs/</loc>
-  </url><url>
-    <loc>http://localhost:64294/tags/</loc>
-  </url><url>
-    <loc>http://localhost:64294/tags/typescript/</loc>
+    <loc>http://localhost:49177/tags/typescript/</loc>
   </url>
 </urlset>
