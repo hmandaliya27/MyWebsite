@@ -2,70 +2,106 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Harshal Mandaliya</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:60816/</link>
     <description>Recent content on Harshal Mandaliya</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="http://localhost:60816/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NFT Creation</title>
-      <link>http://localhost:1313/posts/nft/</link>
+      <link>http://localhost:60816/posts/nft/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/nft/</guid>
+      <guid>http://localhost:60816/posts/nft/</guid>
       <description>Showing my NFT creations</description>
     </item>
     
     <item>
       <title>Generate AI Images</title>
-      <link>http://localhost:1313/posts/image-ai/</link>
+      <link>http://localhost:60816/posts/image-ai/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/image-ai/</guid>
+      <guid>http://localhost:60816/posts/image-ai/</guid>
       <description>Create realistic images with a description...</description>
     </item>
     
     <item>
       <title>Potions...</title>
-      <link>http://localhost:1313/posts/first-post/</link>
+      <link>http://localhost:60816/posts/first-post/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/first-post/</guid>
+      <guid>http://localhost:60816/posts/first-post/</guid>
       <description>Haven&amp;#39;t decided what to put yet..</description>
     </item>
     
     <item>
-      <title>Network Breach</title>
-      <link>http://localhost:1313/projects/cyber-attack/</link>
+      <title>Building a NAS Server from a Dell SFF PC</title>
+      <link>http://localhost:60816/projects/nas-server/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/projects/cyber-attack/</guid>
+      <guid>http://localhost:60816/projects/nas-server/</guid>
+      <description>Repurposing an old Dell Small Form Factor PC into a cost-effective home NAS server</description>
+    </item>
+    
+    <item>
+      <title>Ghost Network Mapper</title>
+      <link>http://localhost:60816/projects/ghost-network-mapper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:60816/projects/ghost-network-mapper/</guid>
+      <description>Discover, identity and list exposed ports on a network</description>
+    </item>
+    
+    <item>
+      <title>Changing IP Addresses with Tor - Kali Linux</title>
+      <link>http://localhost:60816/projects/changeip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:60816/projects/changeip/</guid>
+      <description>Exploring Tor-based IP rotation on Kali and how anonymised traffic behaves in practice</description>
+    </item>
+    
+    <item>
+      <title>Network Breach</title>
+      <link>http://localhost:60816/projects/cyber-attack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:60816/projects/cyber-attack/</guid>
       <description>Managing a Network Breach and Data Migration</description>
     </item>
     
     <item>
-      <title>Royal Navy Challenge</title>
-      <link>http://localhost:1313/projects/royal-navy-challenge/</link>
+      <title>Network Traffic Analysis with Wireshark</title>
+      <link>http://localhost:60816/projects/wireshark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/projects/royal-navy-challenge/</guid>
+      <guid>http://localhost:60816/projects/wireshark/</guid>
+      <description>Monitor, capture, and analyse network packets efficiently</description>
+    </item>
+    
+    <item>
+      <title>Royal Navy Challenge</title>
+      <link>http://localhost:60816/projects/royal-navy-challenge/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:60816/projects/royal-navy-challenge/</guid>
       <description>STEM engineering challenge</description>
     </item>
     
     <item>
       <title>Artificial Horizon</title>
-      <link>http://localhost:1313/projects/artifiical-horizon/</link>
+      <link>http://localhost:60816/projects/artifical-horizon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/projects/artifiical-horizon/</guid>
+      <guid>http://localhost:60816/projects/artifical-horizon/</guid>
       <description>Plane gui</description>
     </item>
     
     <item>
       <title>Contact Me</title>
-      <link>http://localhost:1313/contact/</link>
+      <link>http://localhost:60816/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/contact/</guid>
+      <guid>http://localhost:60816/contact/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/harshal-mandaliya-a328811a2&#34;&gt;&lt;strong&gt;LinkedIn&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.instagram.com/h4rsh4l__&#34;&gt;&lt;strong&gt;Instagram&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -74,10 +110,10 @@
     
     <item>
       <title>Hi I&#39;m Harshal!</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://localhost:60816/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://localhost:60816/about/</guid>
       <description>&lt;p&gt;Having recently graduated from Kingston University, I earned a first-class honours degree in Cyber Security and Computer Forensics. Fuelled by a longstanding passion for IT and technology, I am actively seeking new career opportunities to apply my expertise. My journey into the world of cybersecurity began during my college years, sparking an enduring interest that inspired me to specialise in this field.&lt;/p&gt;
 &lt;p&gt;In addition to my academic pursuits, I relish creating content for YouTube, honing my video editing techniques, and skilfully utilising Photoshop.&lt;/p&gt;</description>
     </item>

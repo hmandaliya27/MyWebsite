@@ -15,13 +15,19 @@ The project centres on Fly-by-Wire (FBW) technology, a system that supersedes tr
 
 ![](/projects/plane/draft.jpg)
 
-The code for this project is written in C# and 
-[**you can download It from here**](https://github.com/hmandaliya27/Plane-GUI/)
-
-- **While the code is not entirely complete, I welcome any modifications or adjustments you may wish to make to better suit your needs.**
-
-> If you are solely interested in observing the application's functionality, you can find the relevant information displayed in the image below.
-
+# Update – October 2026
+The project has now been revisited and completed. The application is **fully working**, with all cockpit display features and flight control functions operating as intended.
 
 ![](/projects/plane/release.jpg)
 
+The code for this project is written in C# and 
+[**you can download it from here**](https://github.com/hmandaliya27/Plane-GUI/)
+
+- **Feel free to download, run and modify the code to suit your own needs. Contributions and suggestions are always welcome.**
+
+> If you'd simply like to see the application in action, the screenshot below shows the finished release.
+
+![](/projects/plane/updatedgui.jpg)
+
+# Conclusion
+What began as a college project in 2019 is now a complete, working cockpit display. It demonstrates how a Fly-by-Wire interface can bring flight data and aircraft controls together in one clear electronic display, and it was a great opportunity to return to the code and see it through to completion.
