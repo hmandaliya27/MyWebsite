@@ -13,10 +13,14 @@ menu:
       name: Projects
       url: /projects/
       weight: 20
+    - identifier: experience
+      name: Experience
+      url: /Experience/
+      weight: 30
     - identifier: search
       name: Search
       url: /search/
-      weight: 40
+      weight: 70
 #    - identifier: example
 #      name: example.org
 #      url: 'https://example.org'
